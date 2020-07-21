@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" dir="ltr" class="uk-notouch" lang="it-it">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Consortium, GARR, rete, italiana, ricerca, educazione, istruzione, università, scuole, scienza, cultura, internet">
+	<meta name="rights" content="Il contenuto di questo sito e' rilasciato, tranne dove altrimenti indicato, secondo i termini della licenza Creative Commons attribuzione - Non commerciale Condividi allo stesso modo 3.0 Italia">
+	<meta name="author" content="Consortium GARR">
+	<meta name="description" content="Consortium GARR - la Rete Italiana dell'Istruzione e della Ricerca">
+	<title>SpeedTest | GARR</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://getuikit.com/v2/docs/js/uikit.min.js"></script>
+	<script src="files/sticky-menu.js"></script>
+	<link rel="stylesheet" href="files/theme.css">
+	<link rel="stylesheet" href="files/custom_v2.css">
+	<script>
+		$(document).ready(function() {
+			$('#restopagina').css({'background-image': 'url(files/bg-' + Math.floor(Math.random() * 6) + '.jpg)'});
+		});
+	
+	</script>
+	<script>
+	/* Script per visualizzare e nascondere il campo password */
+	(function(addon) {
+		var component;
+		if (window.UIkit2) {
+			component = addon(UIkit2);
+		}
+		if (typeof define == 'function' && define.amd) {
+			define('uikit-form-password', ['uikit'], function(){
+				return component || addon(UIkit2);
+			});
+		}
+	})(function(UI){
+		"use strict";
+		UI.component('formPassword', {
+			defaults: {
+				lblShow: '<i class="uk-icon-eye"></i>',
+				lblHide: '<i class="uk-icon-eye-slash"></i>'
+			},
+			boot: function() {
+				// init code
+				UI.$html.on('click.formpassword.uikit', '[data-uk-form-password]', function(e) {
+					var ele = UI.$(this);
+					if (!ele.data('formPassword')) {
+						e.preventDefault();
+						UI.formPassword(ele, UI.Utils.options(ele.attr('data-uk-form-password')));
+						ele.trigger('click');
+					}
+				});
+			},
+			init: function() {
+				var $this = this;
+				this.on('click', function(e) {
+					e.preventDefault();
+					if($this.input.length) {
+						var type = $this.input.attr('type');
+						$this.input.attr('type', type=='text' ? 'password':'text');
+						$this.element.html($this.options[type=='text' ? 'lblShow':'lblHide']);
+					}
+				});
+				this.input = this.element.next('input').length ? this.element.next('input') : this.element.prev('input');
+				this.element.html(this.options[this.input.is('[type="password"]') ? 'lblShow':'lblHide']);
+				this.element.data('formPassword', this);
+			}
+		});
+		return UI.formPassword;
+	});
+	</script>
+</head>
+
+<body class="template-speedtest">
+<div class="tm-page">
+    <div class="tm-container uk-container uk-container-center tm-container-large">
+	<!-- inizio sticky menu  -->
+		<div class="uk-sticky-placeholder">
+			<div data-uk-sticky="" id="sticky-menu" style="margin: 0px;" class="">
+				<div class="tm-dropdown-overlay uk-position-relative" data-uk-dropdown-overlay="{cls:'tm-dropdown-overlay uk-position-absolute uk-width-1-1'}">
+					<nav id="tm-navbar" class="tm-navbar uk-navbar uk-clearfix">
+						<a href="#offcanvas" class="uk-navbar-toggle uk-navbar-flip" data-uk-offcanvas=""></a>
+						<div class="tm-logo-small uk-navbar-content">
+							<a href="home.html"><img src="files/logo-garr-speedtest-orizzontale.png" alt="Consortium GARR - la rete italiana dell'educazione e della ricerca" title="Consortium GARR - la rete italiana dell'educazione e della ricerca" width="150px" height="24px" id="logo"></a>
+						</div>
+					</nav>
+					<div class="uk-dropdown-overlay tm-dropdown-overlay uk-position-absolute uk-width-1-1" style="display: block; height: 0px;"></div>
+				</div>
+			</div>
+		</div>
+		<!-- chiusura sticky menu  -->
+		<!-- inizio resto pagina  -->
+		<div class="tm-container-background" id="restopagina">
+			<!-- inizio area messaggio -->
+			<section id="sezione-messaggio" data-uk-grid-margin>
+				<div class="uk-width-1-1 uk-row-first">
+					<div class="uk-panel uk-panel-space">
+						<p>A R E A   M E S S A G G I O</p>
+					</div>
+				</div>
+			</section>
+			<!-- fine area messaggio -->
+			<div id="tm-middle" class="tm-middle uk-grid uk-grid-collapse div-contenitore" data-uk-grid-match="">
+
+
+				<!-- C O N T E N U T O   D E L L A  P A G I N A -->
+				<div class="uk-align-center div-contenuto-pagina form">
+					<form class="uk-form">
+						<fieldset data-uk-margin>
+							<legend>Nome utente e password</legend>
+							<div class="uk-form-icon">
+								<i class="uk-icon-user-name"></i>
+								<input type="text" placeholder="Nome utente">
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-password">
+									<input type="password" placeholder="Password">
+									<a class="uk-form-password-toggle" data-uk-form-password><i class="uk-icon-eye"></i></a>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Anagrafica</legend>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-user"></i>
+									<input type="text" placeholder="Nome">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-calendar"></i>
+									<input type="text" placeholder="gg-mm-aaaa">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-map-marker"></i>
+									<input type="text" placeholder="Indirizzo">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-envelope-o"></i>
+									<input type="text" placeholder="E-mail">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-mobile"></i>
+									<input type="text" placeholder="Cellulare">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-phone"></i>
+									<input type="text" placeholder="Telefono">
+								</div>
+							</div>
+							<div class="uk-form-row">
+								<div class="uk-form-icon">
+									<i class="uk-icon-venus-mars"></i>
+									<select>
+										<option>Sesso</option>
+										<option>M</option>
+										<option>F</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Privacy</legend>
+							<div class="uk-form-row"><label><input type="checkbox"> ho letto ed accetto le regole sulla <a href="">privacy</a></label></div>
+						</fieldset>
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Campi a larghezza fissa</legend>
+							<div class="uk-form-row"><input type="text" placeholder="largo: 500px" class="uk-form-width-large"></div>
+							<p class="uk-form-help-block">l'input largo 500px (uk-form-width-large) eccede le dimensioni per smartphone e non andrebbe usato</p>
+							<div class="uk-form-row"><input type="text" placeholder="medio: 200px" class="uk-form-width-medium"></div>
+							<div class="uk-form-row"><input type="text" placeholder="piccolo: 130px" class="uk-form-width-small"></div>
+							<div class="uk-form-row"><input type="text" placeholder="mini: 40px" class="uk-form-width-mini"><p class="uk-form-help-inline"> larghezza mini: 40px</p></div>
+						</fieldset>
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Campi a larghezza relativa</legend>
+							<div class="uk-form-row"><input type="text" placeholder="largo 100%" class="uk-width-1-1"></div>
+							<div class="uk-form-row"><input type="text" placeholder="largo 50%" class="uk-width-1-2"></div>
+							<div class="uk-form-row"><input type="text" placeholder="largo 33%" class="uk-width-1-3"></div>
+							<div class="uk-form-row"><input type="text" placeholder="largo 25%" class="uk-width-1-4"></div>
+							<div class="uk-form-row"><input type="text" placeholder="largo 20%" class="uk-width-1-5"></div>
+							
+							<div class="uk-form-row"><input type="text" placeholder="1/6" class="uk-width-1-6"></div>
+							<div class="uk-form-row"><input type="text" placeholder="1/10" class="uk-width-1-10"></div>
+						</fieldset>
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Errore e successo</legend>	
+							<div class="uk-form-row"><input type="text" placeholder="errore" class="uk-form-danger"></div>
+							<div class="uk-form-row"><input type="text" placeholder="corretto" class="uk-form-success"></div>
+							<div class="uk-form-row">
+								<button class="uk-button">invia</button>
+								<button class="uk-button uk-button-primary">invia</button>
+							</div>
+							<div class="uk-form-row">
+								<button class="uk-button uk-button-success">conferma</button>
+								<button class="uk-button uk-button-danger">annulla</button>
+							</div>
+						</fieldset>
+					</form>
+					
+					<form class="uk-form uk-form-horizontal">
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Form su due colonne</legend>
+                                <div class="uk-form-row">
+                                    <label class="uk-form-label" for="form-h-it">Text input</label>
+                                    <div class="uk-form-controls">
+                                        <input type="text" id="form-h-it" placeholder="Text input">
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <label class="uk-form-label" for="form-h-ip">Password input</label>
+                                    <div class="uk-form-controls">
+                                        <input type="password" id="form-h-ip" placeholder="Password input">
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <label class="uk-form-label" for="form-h-s">Select field</label>
+                                    <div class="uk-form-controls">
+                                        <select id="form-h-s">
+                                            <option>Option 01</option>
+                                            <option>Option 02</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <label class="uk-form-label" for="form-h-t">Textarea</label>
+                                    <div class="uk-form-controls">
+                                        <textarea id="form-h-t" cols="30" rows="5" placeholder="Textarea text"></textarea>
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <span class="uk-form-label">Radio input</span>
+                                    <div class="uk-form-controls uk-form-controls-text">
+                                        <input type="radio" id="form-h-r" name="radio"> <label for="form-h-r">Radio input</label><br />
+                                        <label class="uk-margin-right"><input type="radio" name="radio"> 1</label>
+                                        <label class="uk-margin-right"><input type="radio" name="radio"> 2</label>
+                                        <label class="uk-margin-right"><input type="radio" name="radio"> 3</label>
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <span class="uk-form-label">Checkbox input</span>
+                                    <div class="uk-form-controls uk-form-controls-text">
+                                        <input type="checkbox" id="form-h-c"> <label for="form-h-c">Checkbox input</label><br />
+										<label class="uk-margin-right"><input type="checkbox"> 1</label>
+                                        <label class="uk-margin-right"><input type="checkbox"> 2</label>
+                                        <label class="uk-margin-right"><input type="checkbox"> 3</label>
+                                    </div>
+                                </div>
+                                <div class="uk-form-row">
+                                    <span class="uk-form-label">Mixed controls</span>
+                                    <div class="uk-form-controls uk-form-controls-text">
+                                        <input type="checkbox" id="form-h-mix4"> <label for="form-h-mix4" class="uk-margin-right">Checkbox input</label><br /><br />
+                                        <input type="number" id="form-h-mix5" min="0" max="10" value="5" class="uk-form-width-mini uk-form-small"> <label for="form-h-mix5" class="uk-margin-right">Number input</label><br /><br />
+                                        <select id="form-h-mix6" class="uk-form-small">
+                                            <option selected="selected">Option 01</option>
+                                            <option>Option 02</option>
+                                        </select>
+                                        <label for="form-h-mix6" class="uk-margin-right">Select field</label>
+                                    </div>
+                                </div>
+								<div class="uk-form-row">
+                                    <span class="uk-form-label">Caricamento file</span>
+									<div class="uk-form-controls uk-form-controls-text">
+									<div class="uk-form-file">
+                                    	<button class="uk-button">Seleziona un file</button>
+										<input id="form-file" type="file">
+                                	</div>
+									</div>
+								</div>
+						</fieldset>
+					</form>
+					
+					<form class="uk-form">
+						<fieldset data-uk-margin class="uk-margin-large-top">
+							<legend>Form a griglia</legend>
+							<div class="uk-grid">
+								<div class="uk-width-medium-1-2 uk-width-small-1-1">
+									<label>1/2 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-1-4 uk-width-small-1-2">
+									<label>1/4 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-1-4 uk-width-small-1-2">
+									<label>1/4 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-medium-1-3 uk-width-small-1-1">
+									<label>1/3 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-2-3 uk-width-small-1-1">
+									<label>2/3 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-medium-3-4 uk-width-small-1-1">
+									<label>3/4 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-1-4 uk-width-small-1-1">
+									<label>1/4 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-medium-1-5 uk-width-small-1-1">
+									<label>1/5 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-4-5 uk-width-small-1-1">
+									<label>4/5 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+							</div>
+							<div class="uk-grid">
+								<div class="uk-width-medium-2-5 uk-width-small-1-1">
+									<label>2/5 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+								<div class="uk-width-medium-3-5 uk-width-small-1-1">
+									<label>3/5 <input type="text" placeholder="testo" class="uk-width-1-1"></label>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<div class="uk-width-1-1 uk-margin-large-top">
+						<h4>Risorse</h4>
+						<p class="uk-text-warning"> Per tutte le opzioni sul testo clicca <a href="https://getuikit.com/v2/docs/text.html" target="_blank">qui</a></p>
+						<p class="uk-text-warning"> Per tutte le opzioni sui bottoni clicca <a href="https://getuikit.com/v2/docs/button.html" target="_blank">qui</a></p>
+						<p class="uk-text-warning"> Per tutte le opzioni sule griglie clicca <a href="https://getuikit.com/v2/docs/grid.html" target="_blank">qui</a></p>
+					</div>
+				</div>
+				<!-- C O N T E N U T O   D E L L A  P A G I N A -->				
+
+			</div>
+		</div>
+		<footer id="tm-footer" class="tm-footer">
+			<a class="tm-totop-scroller" data-uk-smooth-scroll="" href="#"></a>
+			<div class="uk-panel footermenu">
+				<div id="wk-gridb3f" class="uk-grid-width-1-1 uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-3 uk-grid uk-grid-match uk-text-left " data-uk-grid-match="{target:'&gt; div &gt; .uk-panel', row:true}" data-uk-grid-margin="">
+					<div class="uk-row-first">
+						<div class="uk-panel">
+							<div class="uk-margin">
+								<img src="files/logo-garr-bianco.svg" alt="logo del Consortium GARR" class="logo-garr-footer" width="140px">
+								<p class="uk-margin-small-top footer-testo">Puoi trovare il Consortium GARR anche sui social media</p>
+								<p class="footer-icone-social">
+								  <a href="https://twitter.com/ReteGARR" class="uk-icon-hover uk-icon-small uk-icon-twitter" target="_blank" title="GARR | Twitter"></a> 
+								  <a href="https://www.linkedin.com/company/retegarr" class="uk-icon-hover uk-icon-linkedin-square" target="_blank" title="GARR | Linkedin"></a> 
+								  <a href="https://www.youtube.com/user/GARRTV" class="uk-icon-hover uk-icon-small uk-icon-youtube" target="_blank" title="GARR | Youtube"></a>
+								  <a href="https://it-it.facebook.com/ReteGARR" class="uk-icon-hover uk-icon-small uk-icon-facebook" target="_blank" title="GARR | Facebook"></a>
+								  <a href="https://www.instagram.com/retegarr/" class="uk-icon-hover uk-icon-small uk-icon-instagram" target="_blank" title="GARR | Instagram"></a>
+								</p>
+								<p class="footer-link-ipv6">
+									<a href="https://ipv6-test.com/validate.php?url=referer" target="_blank"><img src="https://ipv6-test.com/button-ipv6-80x15.png" alt="ipv6 ready" title="ipv6 ready" border="0" class="logo-ipv6" /></a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-panel">
+							<div class="uk-margin">
+								<h3 class="tm-tag-11 tm-title-border">CONSORTIUM GARR</h3>
+								<ul class="uk-list uk-list-line">
+									<li><a href="https://www.garr.it/" class="voce-footer" target="_blank">il GARR</a></li>
+									<li><a href="https://www.garr.it/it/contatti" class="voce-footer" target="_blank">Contatti</a></li>
+								</ul>
+								<h5 class="uk-margin-top">Privacy</h5>
+								<ul class="uk-list uk-list-line">
+									<li><a href="https://www.garr.it/it/chi-siamo/informazioni-utili/cookie" class="voce-footer">Cookie</a></li>
+									<li><a href="https://www.garr.it/it/chi-siamo/informazioni-utili/informativa-privacy" class="voce-footer">Informativa sulla Privacy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-panel">
+							<div class="uk-margin">
+								<h3 class="tm-tag-11 tm-title-border">Servizi GARR</h3>
+								<ul class="uk-list uk-list-line">
+									<li><a href="https://servizi.garr.it/rete" target="_blank" class="voce-footer">Rete e Accesso</a></li>
+									<li><a href="https://servizi.garr.it/sicurezza" target="_blank" class="voce-footer">Sicurezza</a></li>
+									<li><a href="https://servizi.garr.it/identita-wi-fi" target="_blank" class="voce-footer">Identità e Mobilità</a></li>
+									<li><a href="https://servizi.garr.it/video-e-voce" target="_blank" class="voce-footer">Videoconferenza</a></li>
+									<li><a href="https://servizi.garr.it/applicazioni" target="_blank" class="voce-footer">Cloud e Applicazioni</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="uk-panel  footer-garr">
+				<p>Consortium GARR - Via dei Tizii, 6 - 00185 Roma | Tel. 0649622000 - Fax 0649622044 | CF 97284570583 – PI 07577141000 | <a href="https://www.garr.it/it/contatti">Contatti</a><br> <a title="Licenza Creative Commons" href="https://creativecommons.org/licenses/by-nc-sa/3.0/it/" target="_blank" rel="noopener noreferrer"><img style="padding-right: 14px;" src="files/creative_commons_88x31.png" alt="Licenza Creative Commons" width="88" height="31" border="0">Il contenuto di questo sito e' rilasciato, tranne dove altrimenti indicato, secondo i termini della licenza Creative Commons attribuzione - Non commerciale Condividi allo stesso modo 3.0 Italia.</a></p>
+			</div>
+		</footer>
+	</div>
+	<div id="offcanvas" class="uk-offcanvas">
+		<div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+			<ul id="offcanvas-menu" class="uk-nav uk-nav-parent-icon uk-nav-offcanvas" data-uk-nav="{}">
+				<li style="margin-top: 90px;"><a href="home.html">Home</a></li>
+				<li><span class="offcanvas-titolo">GARR</span></li>
+				<li><a href="template-garr-1-colonna_V2.html">Una colonna</a></li>
+				<li><a href="template-garr-2-colonne_V2.html">Due colonne</a></li>
+				<li><a href="template-garr-3-colonne_V2.html">Tre colonne</a></li>
+				<li><a href="template-garr-4-colonne_V2.html">Quattro colonne</a></li>
+				<li><span class="offcanvas-titolo">SpeedTest</span></li>
+				<li><a href="template-speedtest-1-colonna_V2.html">Home SpeedTest</a></li>
+				<li><a href="template-speedtest-2-colonne_V2.html">Due colonne</a></li>
+				<li><a href="template-speedtest-3-colonne_V2.html">Tre colonne</a></li>
+				<li><a href="template-speedtest-4-colonne_V2.html">Quattro colonne</a></li>
+				<li><a href="template-speedtest-1-colonna_V2 - form.html" class="uk-active">Form</a></li>
+				<li><a href="template-speedtest-1-colonna_V2 - griglia.html">Griglia</a></li>
+				<li><span class="offcanvas-titolo">Personalizzazione colori</span></li>
+				<li><a href="template-personalizzato_V2.html">template</a></li>
+				<li><span class="offcanvas-titolo">Altro</span></li>
+				<li><a href="privacy.html">Privacy</a></li>
+				<li class="uk-parent" ><a href="#">Link utili</a>
+					<ul class="uk-nav-sub uk-margin-small-bottom" role="menu">
+						<li><a href="https://www.garr.it/it/chi-siamo">Portale GARR</a></li>
+						<li><a href="https://servizi.garr.it/">Servizi GARR</a></li>
+						<li><a href="https://www.garr.it/it/chi-siamo">Chi siamo</a></li>
+						<li><a href="https://www.garr.it/it/news-e-eventi">News e Eventi</a></li>
+						<li><a href="https://www.garr.it/it/contatti">Contatti</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
